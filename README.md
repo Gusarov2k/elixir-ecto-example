@@ -28,7 +28,7 @@ create lib/my_parser/repo.ex
 create config for db connection
 
 add Repo to supervisor
-``elixir
+```elixir
 def start(_type, _args) do
     # add ecto to supervisor
     children = [
