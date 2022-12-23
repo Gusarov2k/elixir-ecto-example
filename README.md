@@ -36,3 +36,17 @@ def start(_type, _args) do
     ]
 end
 ```
+
+# Query
+```elixir
+
+  import Ecto.Query
+
+  MyParser.Repo.query("SELECT * FROM organizations")
+
+  get_org = from o in "organizations", where: o.eo_id == 444, select: o.eo_id
+  MyParser.Repo.one(get_org)
+
+  Ecto.Adapters.SQL.explain(MyParser.Repo, :all, get_org) >| IO.puts
+```
+
