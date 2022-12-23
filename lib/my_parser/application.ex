@@ -7,6 +7,7 @@ defmodule MyParser.Application do
 
   @impl true
   def start(_type, _args) do
+    # add ecto to supervisor
     children = [
       MyParser.Repo
       # Starts a worker by calling: MyParser.Worker.start_link(arg)

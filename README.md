@@ -4,18 +4,35 @@
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `my_parser` to your list of dependencies in `mix.exs`:
+Create new repo with sup
+```cmd
+mix new my_parser --sup
+```
 
+add new library
 ```elixir
-def deps do
+defp deps do
   [
-    {:my_parser, "~> 0.1.0"}
+    {:ecto_sql, "~> 3.1"},
+    {:postgrex, ">= 0.0.0"}
   ]
 end
 ```
+download deps
+```cmd
+mix deps.get
+```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/my_parser>.
+create lib/my_parser/repo.ex
 
+create config for db connection
+
+add Repo to supervisor
+``elixir
+def start(_type, _args) do
+    # add ecto to supervisor
+    children = [
+      MyParser.Repo
+    ]
+end
+```
