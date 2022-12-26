@@ -48,5 +48,11 @@ end
   MyParser.Repo.one(get_org)
 
   Ecto.Adapters.SQL.explain(MyParser.Repo, :all, get_org) >| IO.puts
+
+  # Organization.all.pluck(:eo_id)
+  Repo.all(from o in Organization, select: o.eo_id)
+
+  # by id
+  Repo.get(Organization, 1)
 ```
 
