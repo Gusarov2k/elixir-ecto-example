@@ -1,4 +1,4 @@
-  use Mix.Config
+import Config
 
   config :my_parser, MyParser.Repo,
     database: "ekis-school-sites-backend_development",

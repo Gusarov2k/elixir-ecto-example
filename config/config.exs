@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 config :my_parser, :ecto_repos, [MyParser.Repo]
 
